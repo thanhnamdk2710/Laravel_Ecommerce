@@ -43,7 +43,7 @@
                     <div class="product">
                         <a href="{{ route('shop.show', $product->slug) }}"><img src="/img/macbook-pro.png" alt="product"></a>
                         <a href="{{ route('shop.show', $product->slug) }}"><div class="product-name">{{ $product->name }}</div></a>
-                        <div class="product-price">${{ number_format($product->price / 100, 2) }}</div>
+                        <div class="product-price">${{ $product->presentPrice() }}</div>
                     </div>
                 @endforeach
             </div> <!-- end products -->
