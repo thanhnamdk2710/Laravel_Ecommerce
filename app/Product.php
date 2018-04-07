@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    //
+    public function scopeMightAlsoLike($query){
+        return $query->inRandomOrder()->take(4);
+    }
+
+    public function presentPrice(){
+        return number_format($this->price / 100, 2);
+    }
 }
